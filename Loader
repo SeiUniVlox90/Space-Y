@@ -1,0 +1,97 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Jxereas/UI-Libraries/main/notification_gui_library.lua", true))()
+
+local notif = Notification.new("success", "Success", "Loader Succes Loaded")
+notif:changeHeading("New Heading") -- Args(<string> NewHeading)
+notif:changeBody("New Body") -- Args(<string> NewBody)
+notif:deleteTimeout(3) -- Args(<number> DeleteWaitTime)
+notif:delete()
+
+local Loader = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local Line = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local TextLabel_2 = Instance.new("TextLabel")
+local Button = Instance.new("Frame")
+local Open = Instance.new("TextButton")
+
+Loader.Name = "Loader"
+Loader.Parent = game.Workspace
+Loader.ResetOnSpawn = false
+
+Main.Name = "Main"
+Main.Parent = Loader
+Main.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+Main.BorderSizePixel = 0
+Main.ClipsDescendants = true
+Main.Position = UDim2.new(0.5, -120, 0, 0)
+Main.Size = UDim2.new(0, 240, 0, 70)
+Main.Active = true
+
+Line.Name = "Line"
+Line.Parent = Main
+Line.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Line.BorderSizePixel = 0
+Line.Position = UDim2.new(-0.00416666688, 0, 0.485714287, -34)
+Line.Size = UDim2.new(0, 6, 0, 70)
+
+TextLabel.Parent = Main
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Position = UDim2.new(0, 0, 0.214285716, 0)
+TextLabel.Size = UDim2.new(0, 100, 0, 30)
+TextLabel.Font = Enum.Font.GothamBold
+TextLabel.Text = "SPACE-Y"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 14.000
+
+TextLabel_2.Parent = Main
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.Position = UDim2.new(0, 0, 0.5, 0)
+TextLabel_2.Size = UDim2.new(0, 100, 0, 20)
+TextLabel_2.Font = Enum.Font.GothamBold
+TextLabel_2.Text = "MOBILE"
+TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.TextSize = 10.000
+TextLabel_2.TextTransparency = 0.600
+
+Button.Name = "Button"
+Button.Parent = Main
+Button.BackgroundColor3 = Color3.fromRGB(68, 68, 68)
+Button.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Button.ClipsDescendants = true
+Button.Position = UDim2.new(0.414405316, 0, 0.132358, 0)
+Button.Size = UDim2.new(0, 134, 0, 51)
+
+Open.Name = "Open"
+Open.Parent = Button
+Open.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Open.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Open.BorderSizePixel = 3
+Open.Position = UDim2.new(-0.00419935538, 0, 0.0600824542, 0)
+Open.Size = UDim2.new(0, 129, 0, 43)
+Open.Font = Enum.Font.GothamBold
+Open.Text = "OPEN"
+Open.TextColor3 = Color3.fromRGB(0, 0, 0)
+Open.TextSize = 20.000
+Open.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+
+local function Gui_Ai()
+	local script = Instance.new('LocalScript', Main)
+
+	local Main = script.Parent
+	local Button = script.Parent.Button.Open
+	
+	Main.Visible = true
+	
+	Main.Size = UDim2.new(0, 240,0, 0)
+	wait(10)
+	Main:TweenSize(UDim2.new(0, 240,0, 70),"In","Sine",0.5,false)
+	
+	Button.MouseButton1Click:Connect(function()
+		loadstring(game:HttpGet("", false))()
+		wait(3)
+		Main.Visible = false
+	end)
+end
+coroutine.wrap(Gui_Ai)()
