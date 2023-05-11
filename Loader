@@ -1,89 +1,130 @@
+local validKey = "spacehaxbeta"
+local keyLength = string.len(validKey)
+
 local Loader = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
 local Line = Instance.new("Frame")
-local TextLabel = Instance.new("TextLabel")
-local TextLabel_2 = Instance.new("TextLabel")
-local Button = Instance.new("Frame")
-local Open = Instance.new("TextButton")
+local Logo = Instance.new("TextLabel")
+local Box = Instance.new("TextBox")
+local UICorner_2 = Instance.new("UICorner")
+local Hint = Instance.new("TextLabel")
+local Get = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local Check = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local Checking = Instance.new("TextLabel")
 
 Loader.Name = "Loader"
-Loader.Parent = game.Workspace
+Loader.Parent = game.CoreGui
 Loader.ResetOnSpawn = false
 
 Main.Name = "Main"
 Main.Parent = Loader
-Main.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
-Main.BorderSizePixel = 0
+Main.BackgroundColor3 = Color3.fromRGB(16, 16, 16)
 Main.ClipsDescendants = true
-Main.Position = UDim2.new(0.5, -120, 0, 0)
-Main.Size = UDim2.new(0, 240, 0, 70)
+Main.Position = UDim2.new(0.5, -124, 0.5, -71)
+Main.Size = UDim2.new(0, 248, 0, 142)
 Main.Active = true
+
+UICorner.CornerRadius = UDim.new(0, 5)
+UICorner.Parent = Main
 
 Line.Name = "Line"
 Line.Parent = Main
 Line.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Line.BorderSizePixel = 0
-Line.Position = UDim2.new(-0.00416666688, 0, 0.485714287, -34)
-Line.Size = UDim2.new(0, 6, 0, 70)
+Line.Position = UDim2.new(-0.00802144688, 0, 0, 0)
+Line.Size = UDim2.new(0, 9, 0, 141)
 
-TextLabel.Parent = Main
-TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.BackgroundTransparency = 1.000
-TextLabel.Position = UDim2.new(0, 0, 0.214285716, 0)
-TextLabel.Size = UDim2.new(0, 100, 0, 30)
-TextLabel.Font = Enum.Font.GothamBold
-TextLabel.Text = "SPACE-Y"
-TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.TextSize = 14.000
+Logo.Name = "Logo"
+Logo.Parent = Main
+Logo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Logo.BackgroundTransparency = 1.000
+Logo.Position = UDim2.new(0.0443548374, 0, 0, 0)
+Logo.Size = UDim2.new(0, 94, 0, 26)
+Logo.Font = Enum.Font.GothamBold
+Logo.Text = "SPACE-Y 🚀"
+Logo.TextColor3 = Color3.fromRGB(255, 255, 255)
+Logo.TextSize = 14.000
 
-TextLabel_2.Parent = Main
-TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_2.BackgroundTransparency = 1.000
-TextLabel_2.Position = UDim2.new(0, 0, 0.5, 0)
-TextLabel_2.Size = UDim2.new(0, 100, 0, 20)
-TextLabel_2.Font = Enum.Font.GothamBold
-TextLabel_2.Text = "MOBILE"
-TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_2.TextSize = 10.000
-TextLabel_2.TextTransparency = 0.600
+Box.Name = "Box"
+Box.Parent = Main
+Box.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Box.Position = UDim2.new(0.0524193533, 0, 0.316901416, 0)
+Box.Size = UDim2.new(0, 222, 0, 30)
+Box.Font = Enum.Font.GothamBold
+Box.Text = ""
+Box.TextColor3 = Color3.fromRGB(0, 0, 0)
+Box.TextSize = 14.000
 
-Button.Name = "Button"
-Button.Parent = Main
-Button.BackgroundColor3 = Color3.fromRGB(68, 68, 68)
-Button.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Button.ClipsDescendants = true
-Button.Position = UDim2.new(0.414405316, 0, 0.132358, 0)
-Button.Size = UDim2.new(0, 134, 0, 51)
+UICorner_2.CornerRadius = UDim.new(0, 5)
+UICorner_2.Parent = Box
 
-Open.Name = "Open"
-Open.Parent = Button
-Open.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Open.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Open.BorderSizePixel = 3
-Open.Position = UDim2.new(-0.00419935538, 0, 0.0600824542, 0)
-Open.Size = UDim2.new(0, 129, 0, 43)
-Open.Font = Enum.Font.GothamBold
-Open.Text = "OPEN"
-Open.TextColor3 = Color3.fromRGB(0, 0, 0)
-Open.TextSize = 20.000
-Open.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+Hint.Name = "Hint"
+Hint.Parent = Main
+Hint.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Hint.BackgroundTransparency = 1.000
+Hint.Position = UDim2.new(0.34677431, 0, 0.183098584, 0)
+Hint.Size = UDim2.new(0, 74, 0, 19)
+Hint.Font = Enum.Font.GothamBold
+Hint.Text = "KEY HERE"
+Hint.TextColor3 = Color3.fromRGB(255, 255, 255)
+Hint.TextSize = 12.000
 
-local function Gui_Ai()
-	local script = Instance.new('LocalScript', Main)
+Get.Name = "Get"
+Get.Parent = Main
+Get.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Get.Position = UDim2.new(0.0524193533, 0, 0.57042253, 0)
+Get.Size = UDim2.new(0, 106, 0, 30)
+Get.Font = Enum.Font.GothamBold
+Get.Text = "GET KEY"
+Get.TextColor3 = Color3.fromRGB(0, 0, 0)
+Get.TextSize = 14.000
+Get.MouseButton1Click:Connect(function()
+	clipboard:SetText()
+end)
 
-	local Main = script.Parent
-	local Button = script.Parent.Button.Open
-	
-	Main.Visible = true
-	
-	Main.Size = UDim2.new(0, 240,0, 0)
-	wait(10)
-	Main:TweenSize(UDim2.new(0, 240,0, 70),"In","Sine",0.5,false)
-	
-	Button.MouseButton1Click:Connect(function()
-		loadstring(game:HttpGet("", false))()
+UICorner_3.CornerRadius = UDim.new(0, 5)
+UICorner_3.Parent = Get
+
+Check.Name = "Check"
+Check.Parent = Main
+Check.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Check.Position = UDim2.new(0.508064508, 0, 0.57042253, 0)
+Check.Size = UDim2.new(0, 109, 0, 30)
+Check.Font = Enum.Font.GothamBold
+Check.Text = "CHECK KEY"
+Check.TextColor3 = Color3.fromRGB(0, 0, 0)
+Check.TextSize = 14.000
+
+UICorner_4.CornerRadius = UDim.new(0, 5)
+UICorner_4.Parent = Check
+
+Checking.Name = "Checking"
+Checking.Parent = Main
+Checking.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Checking.BackgroundTransparency = 1.000
+Checking.Position = UDim2.new(0.34677431, 0, 0.809859157, 0)
+Checking.Size = UDim2.new(0, 74, 0, 26)
+Checking.Font = Enum.Font.GothamBold
+Checking.Text = "N/A"
+Checking.TextColor3 = Color3.fromRGB(255, 255, 255)
+Checking.TextSize = 12.000
+
+local function checkKey(input)
+	return input == validKey
+end
+
+
+Check.MouseButton1Click:Connect(function()
+	local input = Box.Text
+	if string.len(input) == keyLength and checkKey(input) then
+		print("Key is valid!")
+		loadstring(game:HttpGet("", true))()
 		wait(3)
 		Main.Visible = false
-	end)
-end
-coroutine.wrap(Gui_Ai)()
+	else
+		print("Key is invalid!")
+	end
+end)
