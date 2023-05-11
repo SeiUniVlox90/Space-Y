@@ -95,9 +95,10 @@ Check.Text = "CHECK KEY"
 Check.TextColor3 = Color3.fromRGB(0, 0, 0)
 Check.TextSize = 14.000
 if Box.Text == "spacehaxbeta" then
-	wait(0.5)
 	Main.Visible = false
-end
+	wait(0.5)
+     end
+end)
 UICorner_4.CornerRadius = UDim.new(0, 5)
 UICorner_4.Parent = Check
 
