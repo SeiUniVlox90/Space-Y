@@ -94,6 +94,7 @@ Check.Font = Enum.Font.GothamBold
 Check.Text = "CHECK KEY"
 Check.TextColor3 = Color3.fromRGB(0, 0, 0)
 Check.TextSize = 14.000
+Check.MouseButton1Click:Connect(function()
 if Box.Text == "spacehaxbeta" then
 	Main.Visible = false
 	wait(0.5)
