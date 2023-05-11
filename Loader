@@ -1,6 +1,3 @@
-local validKey = "spacehaxbeta"
-local keyLength = string.len(validKey)
-
 local Loader = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
@@ -82,7 +79,24 @@ Get.Text = "GET KEY"
 Get.TextColor3 = Color3.fromRGB(0, 0, 0)
 Get.TextSize = 14.000
 Get.MouseButton1Click:Connect(function()
-	clipboard:SetText()
+local fnl = loadstring(game:HttpGetAsync 'https://raw.githubusercontent.com/Code1Tech/utils/main/notification.lua')()
+
+function notify(title, text, duration)
+  title = title or "Notification"
+  text = text or "No text provided."
+  duration = duration or 5
+  
+  fnl:MakeNotification({
+    Title = title,
+    Text = text,
+    Duration = duration
+  })
+end
+
+-- Use the func
+notify("Space-Y", "Copied To Clipboard", 3)
+wait(0.5)
+	setclipboard("https://link-target.net/681157/space-y-loader")
 end)
 
 UICorner_3.CornerRadius = UDim.new(0, 5)
@@ -97,7 +111,11 @@ Check.Font = Enum.Font.GothamBold
 Check.Text = "CHECK KEY"
 Check.TextColor3 = Color3.fromRGB(0, 0, 0)
 Check.TextSize = 14.000
-
+if Box.Text == "spacehaxbeta" then
+	wait(3)
+	Main.Visible = false
+	loadstring(game:HttpGet("https://pastebin.com/raw/iM2Hhq68", true))()
+end
 UICorner_4.CornerRadius = UDim.new(0, 5)
 UICorner_4.Parent = Check
 
@@ -111,20 +129,3 @@ Checking.Font = Enum.Font.GothamBold
 Checking.Text = "N/A"
 Checking.TextColor3 = Color3.fromRGB(255, 255, 255)
 Checking.TextSize = 12.000
-
-local function checkKey(input)
-	return input == validKey
-end
-
-
-Check.MouseButton1Click:Connect(function()
-	local input = Box.Text
-	if string.len(input) == keyLength and checkKey(input) then
-		print("Key is valid!")
-		loadstring(game:HttpGet("", true))()
-		wait(3)
-		Main.Visible = false
-	else
-		print("Key is invalid!")
-	end
-end)
