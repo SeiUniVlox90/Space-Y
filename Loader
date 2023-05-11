@@ -99,6 +99,7 @@ if Box.Text == "spacehaxbeta" then
 	wait(0.5)
      end
 end)
+
 UICorner_4.CornerRadius = UDim.new(0, 5)
 UICorner_4.Parent = Check
 
