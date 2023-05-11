@@ -79,23 +79,6 @@ Get.Text = "GET KEY"
 Get.TextColor3 = Color3.fromRGB(0, 0, 0)
 Get.TextSize = 14.000
 Get.MouseButton1Click:Connect(function()
-local fnl = loadstring(game:HttpGetAsync 'https://raw.githubusercontent.com/Code1Tech/utils/main/notification.lua')()
-
-function notify(title, text, duration)
-  title = title or "Notification"
-  text = text or "No text provided."
-  duration = duration or 5
-  
-  fnl:MakeNotification({
-    Title = title,
-    Text = text,
-    Duration = duration
-  })
-end
-
--- Use the func
-notify("Space-Y", "Copied To Clipboard", 3)
-wait(0.5)
 	setclipboard("https://link-target.net/681157/space-y-loader")
 end)
 
@@ -112,9 +95,8 @@ Check.Text = "CHECK KEY"
 Check.TextColor3 = Color3.fromRGB(0, 0, 0)
 Check.TextSize = 14.000
 if Box.Text == "spacehaxbeta" then
-	wait(3)
+	wait(0.5)
 	Main.Visible = false
-	loadstring(game:HttpGet("https://pastebin.com/raw/iM2Hhq68", true))()
 end
 UICorner_4.CornerRadius = UDim.new(0, 5)
 UICorner_4.Parent = Check
